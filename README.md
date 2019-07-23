@@ -1,4 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 装配好eslint和precommit的[Create React App](https://github.com/facebook/create-react-app).
+
+1. 修改package.json
+
+- 手动安装这些devDependencies
+```
+"devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-babel": "^9.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2"
+  }
+```
+
+- 配置husky和lint-staged
+
+```
+"lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{css,less,scss,sss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+```
+
+2. 添加.eslintrc.js
+
+3. `最重要的一步`：
+
+要想precommit生效，一定不能删除.git目录，自己从头开始commit。第一个commit一定是`inital commit from Create React App`，不然的话precmmit就不生效了。
 
 ## Available Scripts
 
