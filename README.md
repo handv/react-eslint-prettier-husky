@@ -45,6 +45,10 @@
 
 要想precommit生效，一定不能删除.git目录，自己从头开始commit。第一个commit一定是`inital commit from Create React App`，不然的话precmmit就不生效了。
 
+## 参考资料
+
+- [力荐！这些工具可以帮你写出干净的代码](https://www.infoq.cn/article/IzAMXQtkJv3N0rXX_G6a)
+
 ## Available Scripts
 
 In the project directory, you can run:
